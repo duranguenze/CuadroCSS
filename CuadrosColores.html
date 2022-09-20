@@ -1,0 +1,74 @@
+<html>
+<head>
+    <title>Prueba</title>
+</head>
+<style type="text/css">
+input[name=Color][value=Rojo]:checked ~ input[name=Forma][value=Cruz]:checked ~ table td.cruz,
+input[name=Color][value=Rojo]:checked ~ input[name=Forma][value=Triangulo]:checked ~ table td.Triangulo,
+input[name=Color][value=Rojo]:checked ~ input[name=Forma][value=Cuadrado]:checked ~ table td.Cuadrado
+{
+    background-color: red;
+}
+input[name=Color][value=Amarillo]:checked ~ input[name=Forma][value=Cruz]:checked ~ table td.cruz,
+input[name=Color][value=Amarillo]:checked ~ input[name=Forma][value=Triangulo]:checked ~ table td.Triangulo,
+input[name=Color][value=Amarillo]:checked ~ input[name=Forma][value=Cuadrado]:checked ~ table td.Cuadrado,
+input[name=Forma][value=Cruz]:checked ~ input[name=Color][value=Amarillo]:checked ~  table td.cruz
+{
+    background-color: yellow;
+}
+input[name=Color][value=Verde]:checked ~ input[name=Forma][value=Cruz]:checked ~ table td.cruz,
+input[name=Color][value=Verde]:checked ~ input[name=Forma][value=Triangulo]:checked ~ table td.Triangulo,
+input[name=Color][value=Verde]:checked ~ input[name=Forma][value=Cuadrado]:checked ~ table td.Cuadrado,
+input[name=Forma][value=Cruz]:checked ~ input[name=Color][value=Verde]:checked ~ table td.cruz,
+input[name=Forma][value=Cuadrado]:checked ~ input[name=Color][value=Verde]:checked ~ table td.Cuadrado
+{
+    background-color: green;
+}
+table{
+    border-spacing: 0;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+}
+table td{
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+}
+table td{
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    margin: 0;
+}
+label,input{
+float: left;
+display: block;
+}
+label:not([for]){
+    width: 120px;
+}
+label[for="Color"]{
+    width: 95px;
+}
+</style>
+<body>
+<form>
+    <label>Color</label>
+    <label>Forma</label>
+    <br>
+    <input type="radio" value="Rojo" name="Color"><label for="Color">Rojo</label>
+    <input type="radio" value="Cruz" name="Forma"><label for="Forma">Cruz</label><br>
+    <input type="radio" value="Amarillo" name="Color"><label for="Color">Amarillo</label>
+    <input type="radio" value="Cuadrado" name="Forma"><label for="Forma">Cuadrado</label><br>
+    <input type="radio" value="Verde" name="Color"><label for="Color">Verde</label>
+    <input type="radio" value="Triangulo" name="Forma"><label for="Forma">Triangulo</label>
+    <br>
+    <table>
+        <tr><td class="cruz cuadrado">&nbsp;</td><td class="cuadrado">&nbsp;</td><td class="cuadrado">&nbsp;</td><td class="cuadrado">&nbsp;</td><td class="cruz cuadrado">&nbsp;</td></tr>
+        <tr><td class="cuadrado">&nbsp;</td><td class="cruz">&nbsp;</td><td class="">&nbsp;</td><td class="cruz">&nbsp;</td><td class="cuadrado">&nbsp;</td></tr>
+        <tr><td class="cuadrado">&nbsp;</td><td class="">&nbsp;</td><td class="cruz Triangulo">&nbsp;</td><td class="">&nbsp;</td><td class="cuadrado">&nbsp;</td></tr>
+        <tr><td class="cuadrado">&nbsp;</td><td class="cruz Triangulo">&nbsp;</td><td class="Triangulo">&nbsp;</td><td class="cruz Triangulo">&nbsp;</td><td class="cuadrado">&nbsp;</td></tr>
+        <tr><td class="cruz cuadrado Triangulo">&nbsp;</td><td class="cuadrado Triangulo">&nbsp;</td><td class="cuadrado Triangulo">&nbsp;</td><td class="cuadrado Triangulo">&nbsp;</td><td class="cruz cuadrado Triangulo">&nbsp;</td></tr>
+    </table>
+</form>
+</body>
+</html>
